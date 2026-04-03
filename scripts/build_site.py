@@ -51,77 +51,101 @@ def build_site(brief):
     goal = brief["goal"] if isinstance(brief["goal"], str) else ", ".join(brief["goal"])
     colors = brief["brand_colors"] or "choose a professional palette for the industry"
     copy_note = "Write compelling conversion-focused copy." if "No" in str(brief["copy_ready"]) else "Use client copy as basis."
-    prompt = f"""Build a complete high-converting website as a SINGLE self-contained HTML file. Output ONLY the HTML — no markdown, no code fences, no explanation.
 
-Brief:
+    prompt = f"""Build a high-converting landing page as a single self-contained HTML file.
+
+Client Brief:
 - Business: {brief["business_name"]}
 - Industry: {brief["industry"]}
 - Goal: {goal}
-- Site type: {brief["site_type"]}
 - Audience: {brief["target_audience"]}
 - Colors: {colors}
-- Logo: {brief["logo_available"]}
 - Notes: {brief["additional_notes"]}
 
-Requirements:
-- All CSS/JS inline in single HTML file
-- Mobile-responsive (flexbox/grid, no frameworks)
-- Google Fonts optional, no other external deps
-- Hero with headline + CTA above fold
-- Features/benefits, social proof, final CTA, footer
-- SEO meta tags (title, description, og:title, og:description)
-- Smooth scroll, hover effects, professional design
-- {copy_note}
-- Text-based logo if none provided
-- Genuinely impressive and conversion-optimized"""
-    msg = client.messages.create(model="claude-opus-4-6", max_tokens=8096,
+CRITICAL RULES:
+1. Output ONLY valid HTML — no markdown, no code fences, no explanation
+2. Start with <!DOCTYPE html> and end with </html>
+3. Put ALL CSS inside a <style> tag in <head> — keep it concise
+4. Put ALL JS inside a <script> tag before </body>
+5. Keep CSS under 200 lines — use shorthand, avoid redundancy
+6. {copy_note}
+
+REQUIRED SECTIONS (in this order inside <body>):
+1. Nav — logo (text-based) + CTA button
+2. Hero — bold headline, subheadline, primary CTA button, trust badge
+3. Benefits — 3 key benefits with icons (use emoji)
+4. How it works — 3 steps
+5. Testimonials — 2-3 placeholder quotes
+6. Final CTA — section with headline + button
+7. Footer — copyright
+
+Design: modern, bold, professional. Mobile-responsive using flexbox/grid. No external dependencies."""
+
+    msg = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=16000,
         messages=[{"role": "user", "content": prompt}])
+
     html = msg.content[0].text.strip()
     if html.startswith("```"):
         html = re.sub(r"^```[a-z]*\n?", "", html)
         html = re.sub(r"\n?```$", "", html)
+
+    # Validate it has a body
+    if "<body" not in html:
+        raise ValueError("Generated HTML missing <body> tag — output was likely truncated")
+
     return html
 
-def notify(contact_id, business_name, url, site_type, follow_ups):
+def send_ghl_email(contact_id, business_name, preview_url, site_type, follow_ups):
     payload = {"type": "Email", "contactId": contact_id, "emailFrom": "noreply@mail.msgsndr.com",
         "emailTo": NOTIFY_EMAIL, "subject": f"Site Built: {business_name}",
-        "html": f"<h2>Site built for {business_name}</h2><p><strong>Preview:</strong> <a href='{url}'>{url}</a></p><p><em>GitHub Pages takes 1-2 min to go live.</em></p><p><strong>Type:</strong> {site_type}</p><p><strong>Next steps:</strong> {follow_ups}</p>"}
+        "html": f"<h2>Site built for {business_name}</h2><p><strong>Preview:</strong> <a href='{preview_url}'>{preview_url}</a></p><p><em>GitHub Pages takes 1-2 min to go live.</em></p><p><strong>Type:</strong> {site_type}</p><p><strong>Next steps:</strong> {follow_ups}</p>"}
     try:
         requests.post("https://services.leadconnectorhq.com/conversations/messages", headers=GHL_HEADERS, json=payload).raise_for_status()
         print(f"Notified {NOTIFY_EMAIL}")
     except Exception as e:
-        print(f"Email failed (check logs for URL): {e}")
+        print(f"Email failed: {e}\nPreview URL: {preview_url}")
 
 def main():
     submissions = fetch_submissions()
     processed_ids = load_processed_ids()
     new = sorted([s for s in submissions if s.get("id") not in processed_ids], key=lambda s: s.get("createdAt",""))
+
     if not new:
         print("No new submissions.")
         sys.exit(0)
+
     for s in new:
         b = parse_brief(s)
         print(f"Building: {b['business_name']}")
         html = build_site(b)
+
         slug = slugify(b["business_name"])
         site_dir = f"client-sites/{slug}"
         os.makedirs(site_dir, exist_ok=True)
+
         with open(f"{site_dir}/index.html", "w") as f: f.write(html)
+
         follow_ups = []
         if "No" in str(b["logo_available"]): follow_ups.append("Logo needed")
         follow_ups.append("Get FTP/hosting credentials to deploy")
+
         with open(f"{site_dir}/brief.md", "w") as f:
             f.write(f"# {b['business_name']}\n\n- Client: {b['client_name']} ({b['client_email']})\n- Submitted: {b['submitted_at']}\n- Type: {b['site_type']}\n- Goal: {b['goal']}\n- Follow-ups: {', '.join(follow_ups)}\n")
+
         processed_ids.add(b["id"])
         save_processed_ids(processed_ids)
+
         subprocess.run(["git", "config", "user.email", "agent@claudecode.ai"], check=True)
         subprocess.run(["git", "config", "user.name", "Claude Web Agent"], check=True)
         subprocess.run(["git", "add", site_dir, PROCESSED_FILE], check=True)
         subprocess.run(["git", "commit", "-m", f"Build site for {b['business_name']}"], check=True)
         subprocess.run(["git", "push"], check=True)
+
         url = f"{GITHUB_PAGES_BASE}/client-sites/{slug}/"
         print(f"Done: {url}")
-        notify(b["contact_id"], b["business_name"], url, b["site_type"], " | ".join(follow_ups))
+        send_ghl_email(b["contact_id"], b["business_name"], url, b["site_type"], " | ".join(follow_ups))
 
 if __name__ == "__main__":
     main()
