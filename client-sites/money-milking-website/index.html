@@ -3,185 +3,1174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Money Milking — High-Converting Landing Pages That Print Revenue</title>
+<title>Money Milking Website — Landing Pages That Print Revenue</title>
+<meta name="description" content="We build landing pages that turn visitors into paying customers. Average 340% conversion lift. 500+ pages built. Results guaranteed.">
+<meta property="og:title" content="Money Milking Website — Landing Pages That Print Revenue">
+<meta property="og:description" content="Stop losing money to a website that doesn't convert. We fix that.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#6C3AFF;--primary-dark:#5227CC;--accent:#00E89D;--dark:#0A0A1A;--gray:#1A1A2E;--light:#F4F4FF;--white:#FFF;--text:#B8B8D0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--white);background:var(--dark);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-.container{max-width:1140px;margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:16px 0;transition:background .3s;background:rgba(10,10,26,.85);backdrop-filter:blur(12px)}
-nav .container{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.5px}
-.logo span{color:var(--accent)}
-.btn{display:inline-block;padding:12px 28px;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .25s}
-.btn-primary{background:linear-gradient(135deg,var(--primary),#8B5CF6);color:#fff;box-shadow:0 4px 24px rgba(108,58,255,.35)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(108,58,255,.5)}
-.btn-accent{background:var(--accent);color:var(--dark)}
-.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,232,157,.4)}
-.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 0 80px;background:radial-gradient(ellipse at 50% 0%,rgba(108,58,255,.15),transparent 70%)}
-.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),#6C3AFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.2rem;color:var(--text);max-width:600px;margin:0 auto 36px;line-height:1.6}
-.trust{display:flex;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--text)}
-.trust-item strong{color:var(--white)}
-section{padding:100px 0}
-.section-label{text-transform:uppercase;letter-spacing:3px;font-size:.8rem;color:var(--primary);font-weight:700;margin-bottom:12px;text-align:center}
-.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:60px;letter-spacing:-1px}
-.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
-.benefit-card{background:var(--gray);border:1px solid rgba(108,58,255,.15);border-radius:16px;padding:40px 32px;transition:transform .3s,border-color .3s}
-.benefit-card:hover{transform:translateY(-4px);border-color:var(--primary)}
-.benefit-icon{font-size:2.8rem;margin-bottom:16px;display:block}
-.benefit-card h3{font-size:1.25rem;margin-bottom:10px}
-.benefit-card p{color:var(--text);line-height:1.6;font-size:.95rem}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;position:relative}
-.step{text-align:center;position:relative}
-.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;margin:0 auto 20px}
-.step h3{font-size:1.15rem;margin-bottom:8px}
-.step p{color:var(--text);font-size:.95rem;line-height:1.5}
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
-.testimonial{background:var(--gray);border-radius:16px;padding:36px;border:1px solid rgba(255,255,255,.05)}
-.stars{color:#FFD700;font-size:1.1rem;margin-bottom:12px}
-.testimonial blockquote{font-size:1.05rem;line-height:1.6;margin-bottom:20px;color:var(--light)}
-.testimonial-author{display:flex;align-items:center;gap:12px}
-.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
-.author-info span{display:block;font-weight:700;font-size:.95rem}
-.author-info small{color:var(--text);font-size:.82rem}
-.final-cta{text-align:center;background:linear-gradient(180deg,transparent,rgba(108,58,255,.08),transparent);padding:100px 0}
-.final-cta h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
-.final-cta p{color:var(--text);font-size:1.1rem;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
-footer{border-top:1px solid rgba(255,255,255,.06);padding:32px 0;text-align:center;color:var(--text);font-size:.85rem}
-@media(max-width:640px){.trust{flex-direction:column;align-items:center;gap:16px}.benefits-grid,.steps,.testimonials-grid{grid-template-columns:1fr}nav .btn{padding:10px 20px;font-size:.85rem}}
+:root {
+  --bg: #060606;
+  --bg2: #0f0f0f;
+  --card: #111111;
+  --border: #1e1e1e;
+  --gold: #D4A843;
+  --gold-bright: #F0C040;
+  --gold-dim: #A07828;
+  --text: #EFEFEA;
+  --muted: #787870;
+  --white: #ffffff;
+  --red: #E05252;
+  --green: #4CAF82;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(6,6,6,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s;
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #000;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 11px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover { background: var(--gold-bright); transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 11px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 60px 80px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(212,168,67,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float linear infinite;
+}
+
+.hero-shape-1 {
+  width: 300px; height: 300px;
+  top: 15%; left: 5%;
+  background: radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%);
+  border: 1px solid rgba(212,168,67,0.07);
+  animation-duration: 18s;
+}
+
+.hero-shape-2 {
+  width: 200px; height: 200px;
+  top: 60%; right: 8%;
+  background: radial-gradient(circle, rgba(212,168,67,0.05) 0%, transparent 70%);
+  border: 1px solid rgba(212,168,67,0.06);
+  animation-duration: 24s;
+  animation-direction: reverse;
+}
+
+.hero-shape-3 {
+  width: 120px; height: 120px;
+  top: 25%; right: 18%;
+  border: 1px solid rgba(212,168,67,0.1);
+  border-radius: 20px;
+  transform: rotate(30deg);
+  animation-duration: 14s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(3deg); }
+  66% { transform: translateY(8px) rotate(-2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,168,67,0.08);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+  max-width: 900px;
+}
+
+.hero h1 .line-gold { color: var(--gold); display: block; }
+.hero h1 .line-dim { color: var(--muted); font-weight: 400; font-style: italic; font-family: 'Epilogue', sans-serif; font-size: 0.55em; letter-spacing: -0.01em; display: block; margin-bottom: 8px; }
+
+.hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.hero-sub strong { color: var(--text); font-weight: 500; }
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-ctas .btn-gold { padding: 15px 32px; font-size: 0.9rem; }
+.hero-ctas .btn-outline { padding: 15px 32px; font-size: 0.9rem; }
+
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.trust-item .dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 0;
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.ticker-item .up { color: var(--green); }
+.ticker-item .sep { color: var(--border); }
+
+/* ── STATS ── */
+.stats {
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-item {
+  background: var(--bg);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  color: var(--gold);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 120px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: 3px;
+}
+
+.section-h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 64px;
+}
+
+/* ── BENEFITS ── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.benefit-card {
+  background: var(--bg);
+  padding: 48px 40px;
+  transition: background 0.3s;
+}
+
+.benefit-card:hover { background: var(--card); }
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ── HOW IT WORKS ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(16.66% + 20px);
+  right: calc(16.66% + 20px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold-dim));
+  opacity: 0.3;
+}
+
+.step-item {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: var(--gold);
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+
+.step-item h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.step-item p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── PORTFOLIO / RESULTS ── */
+/* Result card preview image */
+.result-preview {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-bottom: 1px solid var(--border);
+  filter: brightness(0.8) saturate(0.85);
+  transition: filter 0.4s;
+}
+.result-card:hover .result-preview { filter: brightness(1) saturate(1); }
+
+/* CTA background */
+.cta-section {
+  position: relative;
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&fit=crop');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.result-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.result-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+
+.result-header {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-industry {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.result-badge {
+  background: rgba(76,175,130,0.1);
+  border: 1px solid rgba(76,175,130,0.25);
+  color: var(--green);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.result-body { padding: 28px; }
+
+.result-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.result-big {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  color: var(--gold);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.result-unit {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.result-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.result-bar-wrap {
+  background: var(--bg2);
+  border-radius: 100px;
+  height: 4px;
+  overflow: hidden;
+}
+
+.result-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright));
+  border-radius: 100px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── TESTIMONIALS ── */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testi-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 36px 32px;
+  transition: border-color 0.3s;
+}
+
+.testi-card:hover { border-color: rgba(212,168,67,0.2); }
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.testi-quote {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 28px;
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 18px;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+.testi-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+}
+
+.testi-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+/* ── FINAL CTA ── */
+.cta-section {
+  max-width: 100%;
+  padding: 0;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+.cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.cta-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.cta-left h2 span { color: var(--gold); }
+
+.cta-left p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+.cta-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--green);
+  letter-spacing: 0.06em;
+}
+
+.cta-right {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 40px;
+}
+
+.cta-right h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.cta-right p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 13px 16px;
+  color: var(--text);
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus { border-color: var(--gold-dim); }
+.form-group input::placeholder { color: var(--muted); }
+
+.form-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 0.88rem;
+}
+
+.form-note {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-top: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.footer-logo span { color: var(--gold); }
+
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 120px 24px 60px; }
+  .stats { grid-template-columns: repeat(2, 1fr); padding: 0; }
+  section { padding: 80px 24px; }
+  .benefits-grid, .steps-grid, .results-grid, .testi-grid { grid-template-columns: 1fr; }
+  .steps-grid::before { display: none; }
+  .cta-inner { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-<div class="container">
-<div class="logo">Money<span>Milking</span></div>
-<a href="#cta" class="btn btn-primary">Get Your Page →</a>
-</div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Money<span>Milking</span>Website</div>
+  <ul class="nav-links">
+    <li><a href="#benefits">Why Us</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+  </ul>
+  <a href="#contact" class="btn-gold">Get Free Audit →</a>
 </nav>
 
-<section class="hero">
-<div class="container">
-<p class="section-label" style="text-align:center;margin-bottom:20px">🚀 Landing Pages That Actually Convert</p>
-<h1>Stop Losing Revenue to<br><em>Ugly, Broken Pages</em></h1>
-<p>We build conversion-optimized landing pages that turn your traffic into paying customers — guaranteed to outperform what you have now, or you don't pay.</p>
-<a href="#cta" class="btn btn-accent" style="font-size:1.1rem;padding:16px 40px">Start Milking More Revenue →</a>
-<div class="trust">
-<div class="trust-item">⚡ <strong>500+</strong> Pages Built</div>
-<div class="trust-item">📈 <strong>3.2x</strong> Avg. Conversion Lift</div>
-<div class="trust-item">⭐ <strong>4.9/5</strong> Client Rating</div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-shape hero-shape-1"></div>
+  <div class="hero-shape hero-shape-2"></div>
+  <div class="hero-shape hero-shape-3"></div>
+  <div class="hero-tag">Live — 47 pages converting right now</div>
+  <h1>
+    <span class="line-dim">your website is bleeding money.</span>
+    We Turn Visitors<br>
+    <span class="line-gold">Into Revenue.</span>
+  </h1>
+  <p class="hero-sub">Most websites convert at <strong>1–2%</strong>. Ours average <strong>6.8%</strong>. That's not luck — it's a system built around one thing: <strong>making you money.</strong></p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-gold">Get My Free Audit →</a>
+    <a href="#results" class="btn-outline">See Real Results</a>
+  </div>
+  <div class="hero-trust">
+    <div class="trust-item"><span class="dot"></span> No contracts</div>
+    <div class="trust-item"><span class="dot"></span> Results in 48 hours</div>
+    <div class="trust-item"><span class="dot"></span> Money-back guarantee</div>
+    <div class="trust-item"><span class="dot"></span> 500+ pages built</div>
+  </div>
 </div>
-</div>
-</section>
 
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker">
+    <span class="ticker-item">🏥 MediCare Clinic <span class="up">↑ 412%</span> leads <span class="sep">|</span></span>
+    <span class="ticker-item">🏠 LuxRealty Group <span class="up">↑ 287%</span> inquiries <span class="sep">|</span></span>
+    <span class="ticker-item">⚡ PowerFit Studio <span class="up">↑ 523%</span> signups <span class="sep">|</span></span>
+    <span class="ticker-item">🛒 ShopElite Store <span class="up">↑ 340%</span> sales <span class="sep">|</span></span>
+    <span class="ticker-item">🎓 ProLearn Academy <span class="up">↑ 619%</span> enrollments <span class="sep">|</span></span>
+    <span class="ticker-item">🔧 QuickFix Services <span class="up">↑ 198%</span> bookings <span class="sep">|</span></span>
+    <span class="ticker-item">💼 FinEdge Consulting <span class="up">↑ 445%</span> calls <span class="sep">|</span></span>
+    <span class="ticker-item">🏥 MediCare Clinic <span class="up">↑ 412%</span> leads <span class="sep">|</span></span>
+    <span class="ticker-item">🏠 LuxRealty Group <span class="up">↑ 287%</span> inquiries <span class="sep">|</span></span>
+    <span class="ticker-item">⚡ PowerFit Studio <span class="up">↑ 523%</span> signups <span class="sep">|</span></span>
+    <span class="ticker-item">🛒 ShopElite Store <span class="up">↑ 340%</span> sales <span class="sep">|</span></span>
+    <span class="ticker-item">🎓 ProLearn Academy <span class="up">↑ 619%</span> enrollments <span class="sep">|</span></span>
+    <span class="ticker-item">🔧 QuickFix Services <span class="up">↑ 198%</span> bookings <span class="sep">|</span></span>
+    <span class="ticker-item">💼 FinEdge Consulting <span class="up">↑ 445%</span> calls <span class="sep">|</span></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="340">0</div>
+    <div class="stat-label">Avg. Conversion Lift %</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="500" data-suffix="+">0</div>
+    <div class="stat-label">Pages Built</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="12" data-prefix="$" data-suffix="M+">0</div>
+    <div class="stat-label">Revenue Generated</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="48" data-suffix="hr">0</div>
+    <div class="stat-label">Avg. Delivery Time</div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
 <section id="benefits">
-<div class="container">
-<p class="section-label">Why Us</p>
-<h2 class="section-title">Pages Engineered to Print Money</h2>
-<div class="benefits-grid">
-<div class="benefit-card">
-<span class="benefit-icon">🎯</span>
-<h3>Conversion-First Design</h3>
-<p>Every pixel is placed with purpose. We use battle-tested frameworks rooted in buyer psychology to guide visitors straight to your CTA — no fluff, no distractions.</p>
-</div>
-<div class="benefit-card">
-<span class="benefit-icon">⚡</span>
-<h3>Blazing-Fast Performance</h3>
-<p>Slow pages bleed money. Our pages load in under 1.5 seconds, score 95+ on PageSpeed, and work flawlessly across every device and browser.</p>
-</div>
-<div class="benefit-card">
-<span class="benefit-icon">📊</span>
-<h3>Data-Driven Optimization</h3>
-<p>We don't guess — we test. Built-in analytics-ready structure and A/B testing support so you continuously squeeze more revenue from the same traffic.</p>
-</div>
-</div>
-</div>
+  <div class="section-tag">Why We Win</div>
+  <h2 class="section-h2 reveal">Built to convert.<br>Not just to look good.</h2>
+  <p class="section-sub reveal">Beautiful design means nothing if it doesn't make you money. Every pixel we place has one job.</p>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">🎯</span>
+      <h3>Conversion-First Design</h3>
+      <p>We design from the bottom up with your goal in mind. Every layout, every color choice, every CTA placement is tested and proven to drive action — not just admiration.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">✍️</span>
+      <h3>Copy That Sells</h3>
+      <p>Words make sales, not screenshots. Our copy speaks directly to your customer's pain points, desires, and objections — then closes them before they even realize it.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">⚡</span>
+      <h3>Speed That Wins</h3>
+      <p>A 1-second delay kills 7% of conversions. Our pages load in under 1.5 seconds, are mobile-first, and engineered for the impatient, scroll-happy buyer of today.</p>
+    </div>
+  </div>
 </section>
 
-<section id="how" style="background:rgba(108,58,255,.03)">
-<div class="container">
-<p class="section-label">How It Works</p>
-<h2 class="section-title">From Zero to High-Converting in 3 Steps</h2>
-<div class="steps">
-<div class="step">
-<div class="step-num">1</div>
-<h3>Tell Us Your Goals</h3>
-<p>Share your business, audience, and objectives. We dig deep into what makes your customers buy.</p>
-</div>
-<div class="step">
-<div class="step-num">2</div>
-<h3>We Build & Optimize</h3>
-<p>Our team crafts a custom landing page using proven conversion frameworks, persuasive copy, and stunning design.</p>
-</div>
-<div class="step">
-<div class="step-num">3</div>
-<h3>Launch & Scale Revenue</h3>
-<p>Go live, watch conversions climb, and scale with confidence. We provide ongoing support and optimization.</p>
-</div>
-</div>
-</div>
+<!-- HOW IT WORKS -->
+<section id="process" style="background: var(--bg2); max-width: 100%; padding: 120px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 60px;">
+    <div class="section-tag">The Process</div>
+    <h2 class="section-h2 reveal">From brief to live<br>in 48 hours.</h2>
+    <p class="section-sub reveal">No bloated agency process. No 6-week timelines. Just fast, focused execution.</p>
+    <div class="steps-grid">
+      <div class="step-item reveal">
+        <div class="step-num">01</div>
+        <h3>Fill Your Brief</h3>
+        <p>Tell us about your business, your audience, and your goal. Takes 5 minutes. Our intake form captures everything we need to build something that converts.</p>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">02</div>
+        <h3>We Build & Refine</h3>
+        <p>Our team designs, writes, and codes your page within 48 hours. You get a live preview link. One round of revisions included — we get it right.</p>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">03</div>
+        <h3>Launch & Convert</h3>
+        <p>We publish to your domain. You start seeing results. If conversions don't improve in 30 days, you get a full refund. That's the deal.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="testimonials">
-<div class="container">
-<p class="section-label">Proof</p>
-<h2 class="section-title">What Our Clients Are Saying</h2>
-<div class="testimonials-grid">
-<div class="testimonial">
-<div class="stars">★★★★★</div>
-<blockquote>"Our old landing page converted at 1.8%. Money Milking rebuilt it and we jumped to 7.4% in the first month. That's a 4x increase in leads with the exact same ad spend. Insane ROI."</blockquote>
-<div class="testimonial-author">
-<div class="avatar">JR</div>
-<div class="author-info"><span>James Rivera</span><small>CEO, ScaleForce Marketing</small></div>
-</div>
-</div>
-<div class="testimonial">
-<div class="stars">★★★★★</div>
-<blockquote>"I've hired 3 agencies before and none came close. These guys actually understand conversion psychology. Our SaaS trial signups doubled in 2 weeks. Worth every penny."</blockquote>
-<div class="testimonial-author">
-<div class="avatar">SK</div>
-<div class="author-info"><span>Sarah Kim</span><small>Founder, CloudSync.io</small></div>
-</div>
-</div>
-<div class="testimonial">
-<div class="stars">★★★★★</div>
-<blockquote>"The page they built us is beautiful, lightning fast, and most importantly — it sells. We went from $12K to $41K/month in revenue from the same traffic source."</blockquote>
-<div class="testimonial-author">
-<div class="avatar">MT</div>
-<div class="author-info"><span>Marcus Thompson</span><small>Director, FitLife Commerce</small></div>
-</div>
-</div>
-</div>
-</div>
+<!-- RESULTS -->
+<section id="results">
+  <div class="section-tag">Case Studies</div>
+  <h2 class="section-h2 reveal">Numbers don't lie.<br>Ours certainly don't.</h2>
+  <p class="section-sub reveal">Real clients. Real results. The kind of numbers that change what a business is worth.</p>
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <img class="result-preview" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="E-commerce result">
+      <div class="result-header">
+        <span class="result-industry">E-Commerce</span>
+        <span class="result-badge">+523% CVR</span>
+      </div>
+      <div class="result-body">
+        <div class="result-metric">
+          <span class="result-big">6.8</span>
+          <span class="result-unit">% conversion rate</span>
+        </div>
+        <p class="result-desc">Fitness equipment store went from 1.1% to 6.8% conversion rate. Revenue tripled within 60 days of launch without increasing ad spend.</p>
+        <div class="result-bar-wrap"><div class="result-bar" data-width="85"></div></div>
+      </div>
+    </div>
+    <div class="result-card reveal">
+      <img class="result-preview" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop" alt="Local services result">
+      <div class="result-header">
+        <span class="result-industry">Local Services</span>
+        <span class="result-badge">+412% Leads</span>
+      </div>
+      <div class="result-body">
+        <div class="result-metric">
+          <span class="result-big">$84k</span>
+          <span class="result-unit">new revenue / mo</span>
+        </div>
+        <p class="result-desc">Dental clinic's new patient bookings went from 12 per month to 61. The page paid for itself within the first week of going live.</p>
+        <div class="result-bar-wrap"><div class="result-bar" data-width="72"></div></div>
+      </div>
+    </div>
+    <div class="result-card reveal">
+      <img class="result-preview" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&fit=crop" alt="SaaS result">
+      <div class="result-header">
+        <span class="result-industry">SaaS / Coaching</span>
+        <span class="result-badge">+619% Signups</span>
+      </div>
+      <div class="result-body">
+        <div class="result-metric">
+          <span class="result-big">2,400</span>
+          <span class="result-unit">leads in 30 days</span>
+        </div>
+        <p class="result-desc">Online course creator launched a new program. Previous best was 320 signups. New landing page delivered 2,400 in the first month.</p>
+        <div class="result-bar-wrap"><div class="result-bar" data-width="94"></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="final-cta" id="cta">
-<div class="container">
-<p class="section-label">Ready?</p>
-<h2>Stop Leaving Money on the Table</h2>
-<p>Get a custom, high-converting landing page built by experts — and start turning clicks into customers today.</p>
-<a href="#" class="btn btn-accent" style="font-size:1.15rem;padding:18px 48px" id="ctaBtn">Get My Landing Page Now →</a>
-<p style="margin-top:16px;font-size:.85rem;color:var(--text)">⚡ Limited spots this month · No upfront risk · Results guaranteed</p>
-</div>
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background: var(--bg2); max-width: 100%; padding: 120px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 60px;">
+    <div class="section-tag">Client Reviews</div>
+    <h2 class="section-h2 reveal">Don't take our word for it.</h2>
+    <p class="section-sub reveal">Every testimonial below came with a bank statement attached.</p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I was skeptical. My old agency charged 5x more and delivered half the results. Money Milking Website built my page in 2 days and my cost-per-lead dropped 73%. I've already referred three clients."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="padding:0;overflow:hidden;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&fit=crop&crop=face" style="width:100%;height:100%;object-fit:cover;" alt="Marcus R."></div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-role">CEO — RealEdge Properties</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"We launched our new service and were getting maybe 8 inquiries a week. Three weeks after the new landing page went live — 47 inquiries. Same traffic, same ads. Just a better page."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="padding:0;overflow:hidden;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&fit=crop&crop=face" style="width:100%;height:100%;object-fit:cover;" alt="Sarah L."></div>
+          <div>
+            <div class="testi-name">Sarah L.</div>
+            <div class="testi-role">Founder — LevelUp Coaching</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The copy alone was worth it. They understood my customer better than I do. The page reads like it was written by someone who's lived inside my customer's head. Conversion rate: 9.2%."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="padding:0;overflow:hidden;"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80&fit=crop&crop=face" style="width:100%;height:100%;object-fit:cover;" alt="David K."></div>
+          <div>
+            <div class="testi-name">David K.</div>
+            <div class="testi-role">Director — TechFlow SaaS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- FINAL CTA -->
+<div class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="section-tag">Free Audit</div>
+      <h2>Your next customer<br>is already on your site.<br><span>Are you keeping them?</span></h2>
+      <p>Get a free, no-obligation conversion audit of your current website. We'll show you exactly where you're losing money — and exactly how to fix it. Takes 48 hours. Costs nothing.</p>
+      <div class="cta-guarantee">
+        <span>✓</span> 30-day money-back guarantee on all builds
+      </div>
+    </div>
+    <div class="cta-right">
+      <h3>Get Your Free Audit</h3>
+      <p>We'll review your site and send a detailed breakdown.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <input type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Business email" required>
+        </div>
+        <div class="form-group">
+          <input type="url" placeholder="Your website URL">
+        </div>
+        <button type="submit" class="btn-gold form-submit">Send My Free Audit →</button>
+      </form>
+      <p class="form-note">No spam. No sales calls. Just your audit within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-<div class="container">
-<p>&copy; 2024 MoneyMilking. All rights reserved. Built to convert.</p>
-</div>
+  <div class="footer-logo">Money<span>Milking</span>Website</div>
+  <div class="footer-copy">© 2026 MoneyMilkingWebsite.com — All rights reserved.</div>
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>50?'rgba(10,10,26,.97)':'rgba(10,10,26,.85)'});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.benefit-card,.step,.testimonial').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .6s ease,transform .6s ease';observer.observe(el)});
-document.getElementById('ctaBtn').addEventListener('click',()=>{alert('🎉 Awesome! In a real setup, this would open a booking form or checkout. Your high-converting page is one step away!')});
+// Intersection Observer for reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Counter animation
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(eased * target);
+    el.textContent = prefix + current.toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = prefix + target.toLocaleString() + suffix;
+  }
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// Result bar animation
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bars = entry.target.querySelectorAll('.result-bar[data-width]');
+      bars.forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 300);
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.result-card').forEach(el => barObserver.observe(el));
+
+// Sticky nav shrink
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.padding = window.scrollY > 60 ? '14px 60px' : '20px 60px';
+});
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Audit Request Sent!';
+  btn.style.background = 'var(--green)';
+  btn.disabled = true;
+}
 </script>
 </body>
 </html>
