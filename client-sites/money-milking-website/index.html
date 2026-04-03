@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Milking — High-Converting Landing Pages That Print Revenue</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#6C3AFF;--primary-dark:#5227CC;--accent:#00E89D;--dark:#0A0A1A;--gray:#1A1A2E;--light:#F4F4FF;--white:#FFF;--text:#B8B8D0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--white);background:var(--dark);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:16px 0;transition:background .3s;background:rgba(10,10,26,.85);backdrop-filter:blur(12px)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.5px}
+.logo span{color:var(--accent)}
+.btn{display:inline-block;padding:12px 28px;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .25s}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#8B5CF6);color:#fff;box-shadow:0 4px 24px rgba(108,58,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(108,58,255,.5)}
+.btn-accent{background:var(--accent);color:var(--dark)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,232,157,.4)}
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 0 80px;background:radial-gradient(ellipse at 50% 0%,rgba(108,58,255,.15),transparent 70%)}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),#6C3AFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:var(--text);max-width:600px;margin:0 auto 36px;line-height:1.6}
+.trust{display:flex;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--text)}
+.trust-item strong{color:var(--white)}
+section{padding:100px 0}
+.section-label{text-transform:uppercase;letter-spacing:3px;font-size:.8rem;color:var(--primary);font-weight:700;margin-bottom:12px;text-align:center}
+.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:60px;letter-spacing:-1px}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.benefit-card{background:var(--gray);border:1px solid rgba(108,58,255,.15);border-radius:16px;padding:40px 32px;transition:transform .3s,border-color .3s}
+.benefit-card:hover{transform:translateY(-4px);border-color:var(--primary)}
+.benefit-icon{font-size:2.8rem;margin-bottom:16px;display:block}
+.benefit-card h3{font-size:1.25rem;margin-bottom:10px}
+.benefit-card p{color:var(--text);line-height:1.6;font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;position:relative}
+.step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;margin:0 auto 20px}
+.step h3{font-size:1.15rem;margin-bottom:8px}
+.step p{color:var(--text);font-size:.95rem;line-height:1.5}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.testimonial{background:var(--gray);border-radius:16px;padding:36px;border:1px solid rgba(255,255,255,.05)}
+.stars{color:#FFD700;font-size:1.1rem;margin-bottom:12px}
+.testimonial blockquote{font-size:1.05rem;line-height:1.6;margin-bottom:20px;color:var(--light)}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
+.author-info span{display:block;font-weight:700;font-size:.95rem}
+.author-info small{color:var(--text);font-size:.82rem}
+.final-cta{text-align:center;background:linear-gradient(180deg,transparent,rgba(108,58,255,.08),transparent);padding:100px 0}
+.final-cta h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
+.final-cta p{color:var(--text);font-size:1.1rem;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:32px 0;text-align:center;color:var(--text);font-size:.85rem}
+@media(max-width:640px){.trust{flex-direction:column;align-items:center;gap:16px}.benefits-grid,.steps,.testimonials-grid{grid-template-columns:1fr}nav .btn{padding:10px 20px;font-size:.85rem}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+<div class="container">
+<div class="logo">Money<span>Milking</span></div>
+<a href="#cta" class="btn btn-primary">Get Your Page →</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<p class="section-label" style="text-align:center;margin-bottom:20px">🚀 Landing Pages That Actually Convert</p>
+<h1>Stop Losing Revenue to<br><em>Ugly, Broken Pages</em></h1>
+<p>We build conversion-optimized landing pages that turn your traffic into paying customers — guaranteed to outperform what you have now, or you don't pay.</p>
+<a href="#cta" class="btn btn-accent" style="font-size:1.1rem;padding:16px 40px">Start Milking More Revenue →</a>
+<div class="trust">
+<div class="trust-item">⚡ <strong>500+</strong> Pages Built</div>
+<div class="trust-item">📈 <strong>3.2x</strong> Avg. Conversion Lift</div>
+<div class="trust-item">⭐ <strong>4.9/5</strong> Client Rating</div>
+</div>
+</div>
+</section>
+
+<section id="benefits">
+<div class="container">
+<p class="section-label">Why Us</p>
+<h2 class="section-title">Pages Engineered to Print Money</h2>
+<div class="benefits-grid">
+<div class="benefit-card">
+<span class="benefit-icon">🎯</span>
+<h3>Conversion-First Design</h3>
+<p>Every pixel is placed with purpose. We use battle-tested frameworks rooted in buyer psychology to guide visitors straight to your CTA — no fluff, no distractions.</p>
+</div>
+<div class="benefit-card">
+<span class="benefit-icon">⚡</span>
+<h3>Blazing-Fast Performance</h3>
+<p>Slow pages bleed money. Our pages load in under 1.5 seconds, score 95+ on PageSpeed, and work flawlessly across every device and browser.</p>
+</div>
+<div class="benefit-card">
+<span class="benefit-icon">📊</span>
+<h3>Data-Driven Optimization</h3>
+<p>We don't guess — we test. Built-in analytics-ready structure and A/B testing support so you continuously squeeze more revenue from the same traffic.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="how" style="background:rgba(108,58,255,.03)">
+<div class="container">
+<p class="section-label">How It Works</p>
+<h2 class="section-title">From Zero to High-Converting in 3 Steps</h2>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Tell Us Your Goals</h3>
+<p>Share your business, audience, and objectives. We dig deep into what makes your customers buy.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>We Build & Optimize</h3>
+<p>Our team crafts a custom landing page using proven conversion frameworks, persuasive copy, and stunning design.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Launch & Scale Revenue</h3>
+<p>Go live, watch conversions climb, and scale with confidence. We provide ongoing support and optimization.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials">
+<div class="container">
+<p class="section-label">Proof</p>
+<h2 class="section-title">What Our Clients Are Saying</h2>
+<div class="testimonials-grid">
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<blockquote>"Our old landing page converted at 1.8%. Money Milking rebuilt it and we jumped to 7.4% in the first month. That's a 4x increase in leads with the exact same ad spend. Insane ROI."</blockquote>
+<div class="testimonial-author">
+<div class="avatar">JR</div>
+<div class="author-info"><span>James Rivera</span><small>CEO, ScaleForce Marketing</small></div>
+</div>
+</div>
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<blockquote>"I've hired 3 agencies before and none came close. These guys actually understand conversion psychology. Our SaaS trial signups doubled in 2 weeks. Worth every penny."</blockquote>
+<div class="testimonial-author">
+<div class="avatar">SK</div>
+<div class="author-info"><span>Sarah Kim</span><small>Founder, CloudSync.io</small></div>
+</div>
+</div>
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<blockquote>"The page they built us is beautiful, lightning fast, and most importantly — it sells. We went from $12K to $41K/month in revenue from the same traffic source."</blockquote>
+<div class="testimonial-author">
+<div class="avatar">MT</div>
+<div class="author-info"><span>Marcus Thompson</span><small>Director, FitLife Commerce</small></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="final-cta" id="cta">
+<div class="container">
+<p class="section-label">Ready?</p>
+<h2>Stop Leaving Money on the Table</h2>
+<p>Get a custom, high-converting landing page built by experts — and start turning clicks into customers today.</p>
+<a href="#" class="btn btn-accent" style="font-size:1.15rem;padding:18px 48px" id="ctaBtn">Get My Landing Page Now →</a>
+<p style="margin-top:16px;font-size:.85rem;color:var(--text)">⚡ Limited spots this month · No upfront risk · Results guaranteed</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>&copy; 2024 MoneyMilking. All rights reserved. Built to convert.</p>
+</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>50?'rgba(10,10,26,.97)':'rgba(10,10,26,.85)'});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.benefit-card,.step,.testimonial').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .6s ease,transform .6s ease';observer.observe(el)});
+document.getElementById('ctaBtn').addEventListener('click',()=>{alert('🎉 Awesome! In a real setup, this would open a booking form or checkout. Your high-converting page is one step away!')});
+</script>
+</body>
+</html>
