@@ -1,4 +1,4 @@
-name: Build Client Sites from GHL
+name: Detect New GHL Submissions
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  detect:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -21,13 +21,95 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests anthropic
+        run: pip install requests
 
-      - name: Run site builder
+      - name: Check for new submissions
+        id: check
         env:
           GHL_API_KEY: ${{ secrets.GHL_API_KEY }}
           GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
           GHL_FORM_ID: ${{ secrets.GHL_FORM_ID }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NOTIFY_EMAIL: rprtgrggg@gmail.com
-        run: python scripts/build_site.py
+        run: |
+          python - << 'PYEOF'
+          import json, os, requests, sys
+
+          headers = {"Authorization": f"Bearer {os.environ['GHL_API_KEY']}", "Version": "2021-07-28"}
+          resp = requests.get("https://services.leadconnectorhq.com/forms/submissions",
+              headers=headers, params={"locationId": os.environ["GHL_LOCATION_ID"],
+                                       "formId": os.environ["GHL_FORM_ID"], "limit": 50})
+          resp.raise_for_status()
+          submissions = resp.json().get("submissions", [])
+
+          processed = []
+          if os.path.exists("processed_ids.json"):
+              with open("processed_ids.json") as f:
+                  processed = json.load(f)
+
+          new = [s for s in submissions if s.get("id") not in processed]
+          if not new:
+              print("No new submissions.")
+              sys.exit(0)
+
+          # Save latest brief
+          os.makedirs(".tmp", exist_ok=True)
+          brief = new[0]
+          o = brief.get("others", {})
+          output = {
+              "id": brief.get("id"),
+              "contactId": brief.get("contactId"),
+              "submittedAt": brief.get("createdAt"),
+              "clientName": o.get("full_name", ""),
+              "clientEmail": o.get("email", ""),
+              "businessName": o.get("dAWWddYgXnR689Nk0anI", ""),
+              "industry": o.get("XHOjNzhBr7sTuhT1dmPD", ""),
+              "goal": o.get("HHZs0yaOcD2casBn6BYn", ""),
+              "siteType": o.get("YWUhxEX27vWNVzSYwt0Q", ""),
+              "targetAudience": o.get("O2ZVNAy84kdx0g6G5qdT", ""),
+              "brandColors": o.get("4whuCKVPRwvsqxyXLfqC", ""),
+              "logoAvailable": o.get("sS6kVrQ7yKyOR43rKPEY", ""),
+              "copyReady": o.get("h0NenOcaFUS2LgBIbQhC", ""),
+              "notes": o.get("o08Z6Ha7NutfZHWUQLxD", ""),
+          }
+          with open(".tmp/pending-brief.json", "w") as f:
+              json.dump(output, f, indent=2)
+
+          print(f"NEW_SUBMISSION=true")
+          print(f"BUSINESS={output['businessName']}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"new_submission=true\n")
+              f.write(f"business_name={output['businessName']}\n")
+          PYEOF
+
+      - name: Commit pending brief
+        if: steps.check.outputs.new_submission == 'true'
+        run: |
+          git config user.email "agent@claudecode.ai"
+          git config user.name "Claude Web Agent"
+          git add .tmp/pending-brief.json
+          git commit -m "New brief pending build: ${{ steps.check.outputs.business_name }}"
+          git push origin claude/ghl-custom-dashboard-W252D
+
+      - name: Notify via GHL email
+        if: steps.check.outputs.new_submission == 'true'
+        env:
+          GHL_API_KEY: ${{ secrets.GHL_API_KEY }}
+        run: |
+          python - << 'PYEOF'
+          import json, os, requests
+          with open(".tmp/pending-brief.json") as f:
+              brief = json.load(f)
+          headers = {"Authorization": f"Bearer {os.environ['GHL_API_KEY']}", "Version": "2021-07-28", "Content-Type": "application/json"}
+          payload = {
+              "type": "Email",
+              "contactId": brief["contactId"],
+              "emailFrom": "noreply@mail.msgsndr.com",
+              "emailTo": "rprtgrggg@gmail.com",
+              "subject": f"New Brief Ready: {brief['businessName']}",
+              "html": f"<h2>New client brief ready to build</h2><p><strong>Business:</strong> {brief['businessName']}</p><p><strong>Type:</strong> {brief['siteType']}</p><p><strong>Goal:</strong> {brief['goal']}</p><p>Your local Claude agent will pick this up within the hour and build it using the frontend-design skill.</p>"
+          }
+          try:
+              requests.post("https://services.leadconnectorhq.com/conversations/messages", headers=headers, json=payload)
+              print("Notification sent.")
+          except Exception as e:
+              print(f"Notify failed: {e}")
+          PYEOF
